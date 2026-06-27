@@ -1,7 +1,7 @@
 ---
 title: 这是天峰先生的第一条博客日志
 ---
-技术使用的是[Hexo](https://hexo.io/)! 天峰先生于2026.6.27毕业，毕业当天有感建立了个人博客。
+技术使用的是[Hexo](https://hexo.io/)! 天峰先生于2026.6.26毕业，毕业当天有感建立了个人博客。
 ## Quick Start
 
 ### Create a new post
