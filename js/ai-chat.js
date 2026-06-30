@@ -13,7 +13,7 @@
   var config = window.__AI_CHAT_CONFIG || {};
 
   var API_URL = config.apiUrl || '';
-  var MODEL = config.model || 'claude-sonnet-4-6';
+  var MODEL = config.model || 'deepseek-chat';
   var MAX_CONTEXT_CHARS = config.maxContextChars || 3000;
   var SYSTEM_PROMPT =
     config.systemPrompt ||

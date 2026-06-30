@@ -135,4 +135,20 @@
 
     $container.removeClass('mobile-nav-on');
   });
+
+  // Back to Top
+  var $backToTop = $('#back-to-top');
+
+  $(window).on('scroll', function(){
+    if ($(this).scrollTop() > 300) {
+      $backToTop.addClass('show');
+    } else {
+      $backToTop.removeClass('show');
+    }
+  });
+
+  $backToTop.on('click', function(e){
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 400);
+  });
 })(jQuery);
