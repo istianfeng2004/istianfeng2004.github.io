@@ -365,11 +365,16 @@
       finalizeStreamingBubble();
 
       if (err.name === 'AbortError') {
-        appendError('请求超时，请稍后重试。');
+        appendError('[超时] 请求超过 30 秒未响应，请稍后重试。');
       } else if (err.message && err.message.includes('Failed to fetch')) {
-        appendError('网络连接失败，请检查网络后重试。');
+        appendError('[网络错误] 无法连接到 AI 服务。\n'
+          + '可能原因：\n'
+          + '1. Vercel 后端未部署或已休眠\n'
+          + '2. CORS 跨域拦截\n'
+          + '3. 网络连接问题\n'
+          + 'API地址: ' + API_URL);
       } else {
-        appendError(err.message || 'AI 服务暂时不可用，请稍后重试。');
+        appendError('[服务器错误] ' + (err.message || 'AI 服务暂时不可用'));
       }
     } finally {
       isStreaming = false;
